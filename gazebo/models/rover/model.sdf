@@ -1,0 +1,190 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+	<model name="Rover">
+		<!-- Static rover for now till we complete mating all joints. -->
+		<static>true</static>
+		
+		<!-- Chassis -->
+		<link name='chassis'>
+			<pose>0 0 4.66 0 0 0</pose>
+			<collision name='collision'>
+				<geometry>
+					<box>
+						<size>5.70 9.19 1.40</size>
+					</box>
+				</geometry>
+			</collision>
+			
+			<visual name='collision'>
+				<geometry>
+					<mesh>
+						<uri>model://rover/CAD.stl</uri>
+					</mesh>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- Left Rocker -->
+		<!-- Left Bogie -->
+		<!-- FL Wheel Link -->
+		
+		<!-- FL Wheel -->
+		<link name="front_left_wheel">
+			<pose>-4.31 10.25 1.46 0 1.5707 0</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- ML Wheel -->
+		<link name="mid_left_wheel">
+			<pose>-4.87 5.63 1.46 0 1.5707 0</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- RL Wheel Link -->
+		
+		<!-- RL Wheel -->
+		<link name="rear_left_wheel">
+			<pose>-4.31 1.2 1.46 0 1.5707 0</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- FR Wheel Link -->
+		
+		<!-- FR Wheel -->
+		<link name="front_right_wheel">
+			<pose>3.01 10.25 1.46 0 1.5707 0</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- MR Wheel -->
+		<link name="mid_right_wheel">
+			<pose>3.84 5.63 1.46 0 1.5707 0</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</visual>
+		</link>
+		
+		<!-- RR Wheel Link -->
+		
+		<!-- RR Wheel -->
+		<link name="rear_right_wheel">
+			<pose>3.28 1.2 1.46 0 1.5707 0</pose>
+			<collision name="collision">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name="visual">
+				<geometry>
+					<cylinder>
+						<radius>1.46</radius>
+						<length>1.70</length>
+					</cylinder>
+				</geometry>
+			</visual>
+		</link>
+		<!-- Right Rocker -->
+		<!-- Right Bogie -->
+		<!-- Left Differential Triangle -->
+		<!-- Right Differential Triangle -->
+		<!-- Left Differential Link -->
+		<!-- Right Differential Link -->
+		<!-- Differential Center -->
+		
+
+		
+<!-->		<joint type="revolute" name="left_wheel_hinge">
+			<pose>0 0 -0.03 0 0 0</pose>
+			<child>left_wheel</child>
+			<parent>chassis</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
+		</joint>
+
+		<joint type="revolute" name="right_wheel_hinge">
+			<pose>0 0 0.03 0 0 0</pose>
+			<child>right_wheel</child>
+			<parent>chassis</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
+		</joint><-->
+	</model>
+</sdf>
