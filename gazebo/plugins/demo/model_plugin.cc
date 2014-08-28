@@ -2,8 +2,8 @@
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
 #include <gazebo/common/common.hh>
-#include <stdio.h>
-
+#include <iostream>
+using namespace std;
 namespace gazebo
 {
   class ModelPluginDemo : public ModelPlugin
@@ -23,7 +23,20 @@ namespace gazebo
     public: void OnUpdate(const common::UpdateInfo & /*_info*/)
     {
       // Apply a small linear velocity to the model.
-      this->model->SetLinearVel(math::Vector3(0, 0.5, 0));
+      math::Vector3 diff;
+      math::Vector3 init(0, 1, 0);
+      diff = this->model->GetWorldLinearVel();
+      cout << "_Velocity is\t" << diff << endl;
+      diff = diff*math::Vector3(0, 0, 1);
+      cout << "ZVelocity is\t" << diff << endl;
+      diff+= math::Vector3(0, 1, 0);
+      cout << "SVelocity is\t" << diff << endl;
+//      cout << "Diff*(1,1,0)" << diff << endl;
+//      diff = 10*(diff-init);
+//      cout << "Diff*(1,1,0)-Init" << diff << endl << endl;
+      this->model->SetLinearVel(diff);
+//      this->model->SetLinearAccel(math::Vector3(0, 2, -9.8));
+//      this->model->SetLinearVel(math::Vector3(0, 1, 0));
     }
 
     // Pointer to the model
