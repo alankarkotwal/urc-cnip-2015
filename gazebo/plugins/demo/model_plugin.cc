@@ -8,10 +8,14 @@ namespace gazebo
 {
   class ModelPluginDemo : public ModelPlugin
   {
-    public: void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
+    public: void Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
     {
       // Store the pointer to the model
       this->model = _parent;
+      this->rear_right_wheel = _parent->GetJoint("rear_right_wheel_joint");
+      this->rear_left_wheel = _parent->GetJoint("rear_left_wheel_joint");
+      this->front_right_wheel = _parent->GetJoint("front_right_wheel_joint");
+      this->front_left_wheel = _parent->GetJoint("front_left_wheel_joint");
 
       // Listen to the update event. This event is broadcast every
       // simulation iteration.
@@ -23,24 +27,30 @@ namespace gazebo
     public: void OnUpdate(const common::UpdateInfo & /*_info*/)
     {
       // Apply a small linear velocity to the model.
-      math::Vector3 diff;
-      math::Vector3 init(0, 1, 0);
-      diff = this->model->GetWorldLinearVel();
-      cout << "_Velocity is\t" << diff << endl;
-      diff = diff*math::Vector3(0, 0, 1);
-      cout << "ZVelocity is\t" << diff << endl;
-      diff+= math::Vector3(0, 1, 0);
-      cout << "SVelocity is\t" << diff << endl;
-//      cout << "Diff*(1,1,0)" << diff << endl;
-//      diff = 10*(diff-init);
-//      cout << "Diff*(1,1,0)-Init" << diff << endl << endl;
-      this->model->SetLinearVel(diff);
-//      this->model->SetLinearAccel(math::Vector3(0, 2, -9.8));
-//      this->model->SetLinearVel(math::Vector3(0, 1, 0));
+//      double vel   = (this->model->GetWorldLinearVel()).GetLength();
+      double x_vel = (this->model->GetWorldLinearVel()).Dot(math::Vector3(1,0,0));
+
+      x_vel = x_vel * 450;
+//      vel = (vel == 0)?0.1:vel;
+      double rr = 450+x_vel;
+      double rl = 450-x_vel;
+      double fr = 200+x_vel;
+      double fl = 200-x_vel;
+
+      cout << rr << "\t" << rl << "\t" << fr << "\t" << fl << endl;
+
+      this->rear_right_wheel->SetForce(0,rr);
+      this->rear_left_wheel->SetForce(0,rl);
+      this->front_right_wheel->SetForce(0,fr);
+      this->front_left_wheel->SetForce(0,fl);
     }
 
     // Pointer to the model
     private: physics::ModelPtr model;
+    private: physics::JointPtr rear_right_wheel;
+    private: physics::JointPtr rear_left_wheel;
+    private: physics::JointPtr front_right_wheel;
+    private: physics::JointPtr front_left_wheel;
 
     // Pointer to the update event connection
     private: event::ConnectionPtr updateConnection;
