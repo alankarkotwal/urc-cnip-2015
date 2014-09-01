@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "rozebo_demo")
+set(rozebo_demo_MAINTAINER "Kamal Galrani <kamalgalrani@gmail.com>")
+set(rozebo_demo_DEPRECATED "")
+set(rozebo_demo_VERSION "0.0.0")
+set(rozebo_demo_BUILD_DEPENDS "gazebo_ros" "roscpp" "rospy" "std_msgs")
+set(rozebo_demo_RUN_DEPENDS "gazebo_ros" "roscpp" "rospy" "std_msgs")
+set(rozebo_demo_BUILDTOOL_DEPENDS "catkin")
