@@ -4,35 +4,24 @@
 		<!-- Static rover for now till we complete mating all joints. -->
 		<static>true</static>
 		
-		<link name='visual'>
+		<!-- Chassis -->
+		<link name='chassis'>
 			<pose>0 0 4.66 0 0 0</pose>
-			<visual name='chassis_vis'>
+			<collision name='chassis_coll'>
+				<geometry>
+					<box>
+						<size>5.70 9.19 1.40</size>
+					</box>
+				</geometry>
+			</collision>
+			
+<!-->			<visual name='chassis_vis'>
 				<geometry>
 					<mesh>
 						<uri>model://rover/CAD.stl</uri>
 					</mesh>
 				</geometry>
-			</visual>
-		</link>
-		
-		<!-- Chassis -->
-		<link name='chassis'>
-			<pose>0 4.9 4.66 0 0 0</pose>
-			<collision name='chassis_coll'>
-				<geometry>
-					<box>
-						<size>5.0 9.19 1.40</size>
-					</box>
-				</geometry>
-			</collision>
-			
-			<visual name='chassis_vis'>
-				<geometry>
-					<box>
-						<size>5.0 9.19 1.40</size>
-					</box>
-				</geometry>
-			</visual>
+			</visual><!-->
 		</link>
 		
 		<!-- Left Rocker -->
