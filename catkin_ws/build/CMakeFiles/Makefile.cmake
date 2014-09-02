@@ -240,6 +240,8 @@ SET(CMAKE_DEPEND_INFO_FILES
   "rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "rozebo_demo/CMakeFiles/husky_ros_node.dir/DependInfo.cmake"
+  "rozebo_demo/CMakeFiles/husky_ros_plugin.dir/DependInfo.cmake"
   "rozebo_demo/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake"
   "rozebo_demo/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake"
   "rozebo_demo/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake"
@@ -264,5 +266,4 @@ SET(CMAKE_DEPEND_INFO_FILES
   "rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/DependInfo.cmake"
-  "rozebo_demo/CMakeFiles/world_plugin.dir/DependInfo.cmake"
   )

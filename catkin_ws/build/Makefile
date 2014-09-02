@@ -449,6 +449,32 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named husky_ros_node
+
+# Build rule for target.
+husky_ros_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 husky_ros_node
+.PHONY : husky_ros_node
+
+# fast build rule for target.
+husky_ros_node/fast:
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/build
+.PHONY : husky_ros_node/fast
+
+#=============================================================================
+# Target rules for targets named husky_ros_plugin
+
+# Build rule for target.
+husky_ros_plugin: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 husky_ros_plugin
+.PHONY : husky_ros_plugin
+
+# fast build rule for target.
+husky_ros_plugin/fast:
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build
+.PHONY : husky_ros_plugin/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
@@ -760,19 +786,6 @@ trajectory_msgs_generate_messages_py/fast:
 	$(MAKE) -f rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
 .PHONY : trajectory_msgs_generate_messages_py/fast
 
-#=============================================================================
-# Target rules for targets named world_plugin
-
-# Build rule for target.
-world_plugin: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 world_plugin
-.PHONY : world_plugin
-
-# fast build rule for target.
-world_plugin/fast:
-	$(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/build
-.PHONY : world_plugin/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -809,6 +822,8 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... husky_ros_node"
+	@echo "... husky_ros_plugin"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
@@ -833,7 +848,6 @@ help:
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... world_plugin"
 .PHONY : help
 
 

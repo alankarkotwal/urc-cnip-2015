@@ -72,14 +72,39 @@ rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o.provides: rozebo_
 
 rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o.provides.build: rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o
 
+rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o: rozebo_demo/CMakeFiles/world_plugin.dir/flags.make
+rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o: /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/src/rozebo_demo/src/model_plugin.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o"
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o -c /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/src/rozebo_demo/src/model_plugin.cpp
+
+rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/world_plugin.dir/src/model_plugin.cpp.i"
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/src/rozebo_demo/src/model_plugin.cpp > CMakeFiles/world_plugin.dir/src/model_plugin.cpp.i
+
+rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/world_plugin.dir/src/model_plugin.cpp.s"
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/src/rozebo_demo/src/model_plugin.cpp -o CMakeFiles/world_plugin.dir/src/model_plugin.cpp.s
+
+rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.requires:
+.PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.requires
+
+rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.provides: rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.requires
+	$(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.provides.build
+.PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.provides
+
+rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.provides.build: rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o
+
 # Object files for target world_plugin
 world_plugin_OBJECTS = \
-"CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o"
+"CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o" \
+"CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o"
 
 # External object files for target world_plugin
 world_plugin_EXTERNAL_OBJECTS =
 
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/devel/lib/libworld_plugin.so: rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o
+/home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/devel/lib/libworld_plugin.so: rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/devel/lib/libworld_plugin.so: rozebo_demo/CMakeFiles/world_plugin.dir/build.make
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/devel/lib/libworld_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_api_plugin.so
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/devel/lib/libworld_plugin.so: /opt/ros/indigo/lib/libgazebo_ros_paths_plugin.so
@@ -141,6 +166,7 @@ rozebo_demo/CMakeFiles/world_plugin.dir/build: /home/singularity/Documents/MSI/u
 .PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/build
 
 rozebo_demo/CMakeFiles/world_plugin.dir/requires: rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o.requires
+rozebo_demo/CMakeFiles/world_plugin.dir/requires: rozebo_demo/CMakeFiles/world_plugin.dir/src/model_plugin.cpp.o.requires
 .PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/requires
 
 rozebo_demo/CMakeFiles/world_plugin.dir/clean:

@@ -388,6 +388,34 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+rozebo_demo/CMakeFiles/husky_ros_node.dir/rule:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rozebo_demo/CMakeFiles/husky_ros_node.dir/rule
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_node.dir/rule
+
+# Convenience name for target.
+husky_ros_node: rozebo_demo/CMakeFiles/husky_ros_node.dir/rule
+.PHONY : husky_ros_node
+
+# fast build rule for target.
+husky_ros_node/fast:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/build
+.PHONY : husky_ros_node/fast
+
+# Convenience name for target.
+rozebo_demo/CMakeFiles/husky_ros_plugin.dir/rule:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rozebo_demo/CMakeFiles/husky_ros_plugin.dir/rule
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_plugin.dir/rule
+
+# Convenience name for target.
+husky_ros_plugin: rozebo_demo/CMakeFiles/husky_ros_plugin.dir/rule
+.PHONY : husky_ros_plugin
+
+# fast build rule for target.
+husky_ros_plugin/fast:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build
+.PHONY : husky_ros_plugin/fast
+
+# Convenience name for target.
 rozebo_demo/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rozebo_demo/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : rozebo_demo/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -723,43 +751,53 @@ trajectory_msgs_generate_messages_py/fast:
 	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
 .PHONY : trajectory_msgs_generate_messages_py/fast
 
-# Convenience name for target.
-rozebo_demo/CMakeFiles/world_plugin.dir/rule:
-	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rozebo_demo/CMakeFiles/world_plugin.dir/rule
-.PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/rule
-
-# Convenience name for target.
-world_plugin: rozebo_demo/CMakeFiles/world_plugin.dir/rule
-.PHONY : world_plugin
-
-# fast build rule for target.
-world_plugin/fast:
-	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/build
-.PHONY : world_plugin/fast
-
-src/world_plugin.o: src/world_plugin.cpp.o
-.PHONY : src/world_plugin.o
+src/husky_ros_node.o: src/husky_ros_node.cpp.o
+.PHONY : src/husky_ros_node.o
 
 # target to build an object file
-src/world_plugin.cpp.o:
-	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.o
-.PHONY : src/world_plugin.cpp.o
+src/husky_ros_node.cpp.o:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/src/husky_ros_node.cpp.o
+.PHONY : src/husky_ros_node.cpp.o
 
-src/world_plugin.i: src/world_plugin.cpp.i
-.PHONY : src/world_plugin.i
+src/husky_ros_node.i: src/husky_ros_node.cpp.i
+.PHONY : src/husky_ros_node.i
 
 # target to preprocess a source file
-src/world_plugin.cpp.i:
-	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.i
-.PHONY : src/world_plugin.cpp.i
+src/husky_ros_node.cpp.i:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/src/husky_ros_node.cpp.i
+.PHONY : src/husky_ros_node.cpp.i
 
-src/world_plugin.s: src/world_plugin.cpp.s
-.PHONY : src/world_plugin.s
+src/husky_ros_node.s: src/husky_ros_node.cpp.s
+.PHONY : src/husky_ros_node.s
 
 # target to generate assembly for a file
-src/world_plugin.cpp.s:
-	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/src/world_plugin.cpp.s
-.PHONY : src/world_plugin.cpp.s
+src/husky_ros_node.cpp.s:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/src/husky_ros_node.cpp.s
+.PHONY : src/husky_ros_node.cpp.s
+
+src/husky_ros_plugin.o: src/husky_ros_plugin.cpp.o
+.PHONY : src/husky_ros_plugin.o
+
+# target to build an object file
+src/husky_ros_plugin.cpp.o:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/src/husky_ros_plugin.cpp.o
+.PHONY : src/husky_ros_plugin.cpp.o
+
+src/husky_ros_plugin.i: src/husky_ros_plugin.cpp.i
+.PHONY : src/husky_ros_plugin.i
+
+# target to preprocess a source file
+src/husky_ros_plugin.cpp.i:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/src/husky_ros_plugin.cpp.i
+.PHONY : src/husky_ros_plugin.cpp.i
+
+src/husky_ros_plugin.s: src/husky_ros_plugin.cpp.s
+.PHONY : src/husky_ros_plugin.s
+
+# target to generate assembly for a file
+src/husky_ros_plugin.cpp.s:
+	cd /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build && $(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/src/husky_ros_plugin.cpp.s
+.PHONY : src/husky_ros_plugin.cpp.s
 
 # Help Target
 help:
@@ -785,6 +823,8 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... husky_ros_node"
+	@echo "... husky_ros_plugin"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
@@ -815,10 +855,12 @@ help:
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... world_plugin"
-	@echo "... src/world_plugin.o"
-	@echo "... src/world_plugin.i"
-	@echo "... src/world_plugin.s"
+	@echo "... src/husky_ros_node.o"
+	@echo "... src/husky_ros_node.i"
+	@echo "... src/husky_ros_node.s"
+	@echo "... src/husky_ros_plugin.o"
+	@echo "... src/husky_ros_plugin.i"
+	@echo "... src/husky_ros_plugin.s"
 .PHONY : help
 
 

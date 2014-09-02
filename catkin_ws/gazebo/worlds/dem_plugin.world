@@ -606,8 +606,8 @@
           </ode>
         </physics>
       </joint>
-      <plugin name="model_plugin_demo" filename="libmodel_plugin_demo.so"/>
+      <plugin name="husky_plugin" filename="libhusky_ros_plugin.so"/>
     </model>
-    <plugin name="world_plugin" filename="libworld_plugin.so"/>
+<!--    <plugin name="world_plugin" filename="libworld_plugin.so"/>-->
   </world>
 </sdf>

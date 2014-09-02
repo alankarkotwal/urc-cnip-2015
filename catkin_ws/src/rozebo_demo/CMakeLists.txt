@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  gazebo_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -83,7 +84,7 @@ find_package(gazebo REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES rozebo_demo
-  CATKIN_DEPENDS gazebo_ros roscpp rospy std_msgs
+#  CATKIN_DEPENDS gazebo_ros roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -107,12 +108,15 @@ link_directories(
 # add_library(rozebo_demo
 #   src/${PROJECT_NAME}/rozebo_demo.cpp
 # )
-add_library(world_plugin
-  src/world_plugin.cpp
+add_library( husky_ros_plugin
+  src/husky_ros_plugin.cpp
 )
 
 ## Declare a cpp executable
 # add_executable(rozebo_demo_node src/rozebo_demo_node.cpp)
+add_executable( husky_ros_node
+  src/husky_ros_node.cpp
+)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -122,10 +126,12 @@ add_library(world_plugin
 # target_link_libraries(rozebo_demo_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(
-  world_plugin
+target_link_libraries( husky_ros_plugin
   ${catkin_LIBRARIES}
   ${GAZEBO_LIBRARIES}
+)
+target_link_libraries( husky_ros_node
+  ${catkin_LIBRARIES}
 )
 
 #############

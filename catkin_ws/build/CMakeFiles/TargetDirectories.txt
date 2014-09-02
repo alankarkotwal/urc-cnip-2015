@@ -19,6 +19,8 @@
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_py.dir
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/gtest/CMakeFiles/gtest.dir
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/gtest/CMakeFiles/gtest_main.dir
+/home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/husky_ros_node.dir
+/home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/husky_ros_plugin.dir
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/roscpp_generate_messages_lisp.dir
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/roscpp_generate_messages_py.dir
@@ -45,4 +47,3 @@
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir
 /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir
-/home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/rozebo_demo/CMakeFiles/world_plugin.dir

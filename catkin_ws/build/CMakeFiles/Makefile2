@@ -258,7 +258,8 @@ clean: gtest/CMakeFiles/gtest_main.dir/clean
 # Directory level rules for directory rozebo_demo
 
 # Convenience name for "all" pass in the directory.
-rozebo_demo/all: rozebo_demo/CMakeFiles/world_plugin.dir/all
+rozebo_demo/all: rozebo_demo/CMakeFiles/husky_ros_node.dir/all
+rozebo_demo/all: rozebo_demo/CMakeFiles/husky_ros_plugin.dir/all
 .PHONY : rozebo_demo/all
 
 # Convenience name for "clean" pass in the directory.
@@ -279,6 +280,8 @@ rozebo_demo/clean: rozebo_demo/CMakeFiles/gazebo_ros_gencfg.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+rozebo_demo/clean: rozebo_demo/CMakeFiles/husky_ros_node.dir/clean
+rozebo_demo/clean: rozebo_demo/CMakeFiles/husky_ros_plugin.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/roscpp_generate_messages_py.dir/clean
@@ -303,7 +306,6 @@ rozebo_demo/clean: rozebo_demo/CMakeFiles/tf_generate_messages_py.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
 rozebo_demo/clean: rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
-rozebo_demo/clean: rozebo_demo/CMakeFiles/world_plugin.dir/clean
 .PHONY : rozebo_demo/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -835,6 +837,76 @@ rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: rozebo_demo/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rozebo_demo/CMakeFiles/husky_ros_node.dir
+
+# All Build rule for target.
+rozebo_demo/CMakeFiles/husky_ros_node.dir/all:
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/depend
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles  3
+	@echo "Built target husky_ros_node"
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_node.dir/all
+
+# Include target in all.
+all: rozebo_demo/CMakeFiles/husky_ros_node.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rozebo_demo/CMakeFiles/husky_ros_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 rozebo_demo/CMakeFiles/husky_ros_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles 0
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_node.dir/rule
+
+# Convenience name for target.
+husky_ros_node: rozebo_demo/CMakeFiles/husky_ros_node.dir/rule
+.PHONY : husky_ros_node
+
+# clean rule for target.
+rozebo_demo/CMakeFiles/husky_ros_node.dir/clean:
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_node.dir/build.make rozebo_demo/CMakeFiles/husky_ros_node.dir/clean
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_node.dir/clean
+
+# clean rule for target.
+clean: rozebo_demo/CMakeFiles/husky_ros_node.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target rozebo_demo/CMakeFiles/husky_ros_plugin.dir
+
+# All Build rule for target.
+rozebo_demo/CMakeFiles/husky_ros_plugin.dir/all:
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/depend
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles  4
+	@echo "Built target husky_ros_plugin"
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_plugin.dir/all
+
+# Include target in all.
+all: rozebo_demo/CMakeFiles/husky_ros_plugin.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+rozebo_demo/CMakeFiles/husky_ros_plugin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 rozebo_demo/CMakeFiles/husky_ros_plugin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles 0
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_plugin.dir/rule
+
+# Convenience name for target.
+husky_ros_plugin: rozebo_demo/CMakeFiles/husky_ros_plugin.dir/rule
+.PHONY : husky_ros_plugin
+
+# clean rule for target.
+rozebo_demo/CMakeFiles/husky_ros_plugin.dir/clean:
+	$(MAKE) -f rozebo_demo/CMakeFiles/husky_ros_plugin.dir/build.make rozebo_demo/CMakeFiles/husky_ros_plugin.dir/clean
+.PHONY : rozebo_demo/CMakeFiles/husky_ros_plugin.dir/clean
+
+# clean rule for target.
+clean: rozebo_demo/CMakeFiles/husky_ros_plugin.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -1579,41 +1651,6 @@ rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: rozebo_demo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target rozebo_demo/CMakeFiles/world_plugin.dir
-
-# All Build rule for target.
-rozebo_demo/CMakeFiles/world_plugin.dir/all:
-	$(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/depend
-	$(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles  3
-	@echo "Built target world_plugin"
-.PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/all
-
-# Include target in all.
-all: rozebo_demo/CMakeFiles/world_plugin.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-rozebo_demo/CMakeFiles/world_plugin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 rozebo_demo/CMakeFiles/world_plugin.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/build/CMakeFiles 0
-.PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/rule
-
-# Convenience name for target.
-world_plugin: rozebo_demo/CMakeFiles/world_plugin.dir/rule
-.PHONY : world_plugin
-
-# clean rule for target.
-rozebo_demo/CMakeFiles/world_plugin.dir/clean:
-	$(MAKE) -f rozebo_demo/CMakeFiles/world_plugin.dir/build.make rozebo_demo/CMakeFiles/world_plugin.dir/clean
-.PHONY : rozebo_demo/CMakeFiles/world_plugin.dir/clean
-
-# clean rule for target.
-clean: rozebo_demo/CMakeFiles/world_plugin.dir/clean
 .PHONY : clean
 
 #=============================================================================
