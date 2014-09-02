@@ -529,7 +529,7 @@
           </ode>
         </physics>
       </joint>
-      <plugin name="model_plugin_demo" filename="libmodel_plugin_demo.so"/>
+      <plugin name="husky_plugin" filename="libhusky_ros_plugin.so"/>
     </model>
     <state world_name='default'>
       <sim_time>50 21000000</sim_time>
@@ -584,6 +584,5 @@
         <view_controller>orbit</view_controller>
       </camera>
     </gui>
-    <plugin name="world_plugin" filename="libworld_plugin.so"/>
   </world>
 </sdf>

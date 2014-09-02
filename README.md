@@ -8,7 +8,11 @@ Instructions:
 ```
 @msi
 catkin_make
-```
+roslaunch rozebo_demo dem_plugin.launch
+#
+# Replace 'dem_plugin.launch' with 'dem_only.launch'
+# or 'plugin_only.launch' for individual tests
+#
 
-* Test the installation with `roslaunch rozebo_demo dem_plugin.launch` (`roslaunch rozebo_demo dem_only.launch` for DEM only, `roslaunch rozebo_demo plugin_only.launch` for plugin only)
-* "Hello World!..." should be echoed in the terminal and husky should move on playing the simulation
+```
+* Now play the simulation.
