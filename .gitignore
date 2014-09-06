@@ -1,0 +1,16 @@
+# Temporary files
+*.save
+*~
+
+# Compressed files
+*.tar
+*.tar.gz
+*.zip
+*.tar.bz2
+
+# Compiled files
+catkin_ws/build/*
+catkin_ws/devel/*
+*.so
+*.o
+*.out
