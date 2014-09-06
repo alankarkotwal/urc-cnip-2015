@@ -29,11 +29,11 @@ fi
 codename=`lsb_release -cs`
 release=`lsb_release -rs`
 
-#case "$codename" in
-#'trusty') echo -e "\e[01;36m[INFO]: Running on Ubuntu 14.04 (Trusty Tahr)\e[0m";;
-#'saucy') echo -e "\e[01;36m[INFO]: Running on Ubuntu 13.10 (Saucy Salamander)\e[0m";;
-#*) echo -e "\e[01;31m[ERR]: This script supports only Ubuntu 14.04 (Trusty Tahr) and Ubuntu 13.10 (Saucy Salamander) (not tested)\e[0m";exit 4;
-#esac
+case "$codename" in
+'trusty') echo -e "\e[01;36m[INFO]: Running on Ubuntu 14.04 (Trusty Tahr)\e[0m";;
+'saucy') echo -e "\e[01;36m[INFO]: Running on Ubuntu 13.10 (Saucy Salamander)\e[0m";;
+*) echo -e "\e[01;31m[ERR]: This script supports only Ubuntu 14.04 (Trusty Tahr) and Ubuntu 13.10 (Saucy Salamander) (not tested)\e[0m";exit 4;
+esac
 
 ros_indigo(){
   case "$codename" in
@@ -88,7 +88,7 @@ gazebo_dem(){
   wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
   sudo apt-get remove 'gazebo-*' 'sdformat-*' ros-hydro-simulator-gazebo ros-indigo-simulator-gazebo
   sudo apt-get install libopencv*
-  sudo aptitude install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev xsltproc ruby-ronn robot-player-dev* gdal-bin libgdal-dev python-gdal doxygen
+  sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev xsltproc ruby-ronn robot-player-dev* gdal-bin libgdal-dev libgdal1h python-gdal doxygen
   if [ $? -ne 0 ]; then
     echo "\e[01;31m[ERR]: Failed installing prerequisites for making gazebo4 :(\nAborting...\e[0m"
     exit 6
