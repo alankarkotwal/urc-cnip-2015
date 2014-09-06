@@ -1,8 +1,0 @@
-prefix=/home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/install
-
-Name: rozebo_demo
-Description: Description of rozebo_demo
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/singularity/Documents/MSI/urc-cnip-2015/catkin_ws/install/lib 
-Requires: 
