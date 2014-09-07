@@ -81,6 +81,7 @@ gazebo_ros(){
     'saucy') ros_hydro; gazebo_plain; sudo apt-get install ros-hydro-gazebo4-msgs ros-hydro-gazebo4-plugins ros-hydro-gazebo4-ros ros-hydro-gazebo4-ros-control ros-hydro-gazebo4-ros-pkgs;;
     *) echo -e "\e[01;31m[ERR]: Unable to determine operating system! Aborting...\e[0m";exit 5;
   esac
+  echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 }
 
 gazebo_dem(){
@@ -105,7 +106,7 @@ gazebo_dem(){
   sudo make install
   cd /usr/local/src
   hg clone https://bitbucket.org/osrf/gazebo
-  cd ~/gazebo
+  cd gazebo
   hg up gazebo_4.0
   mkdir build
   cd build
@@ -119,6 +120,7 @@ gazebo_dem(){
   make -j4
   sudo chmod 755 /usr/local/src
   sudo make install
+  echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 }
 
 all(){
