@@ -1045,29 +1045,52 @@
 		
 		
 		<!-- Ball Joints -->
-		<joint type="ball" name="right_diff_link_rocker_joint">
+		<joint type="revolute2" name="right_diff_link_rocker_joint">
 			<pose>0.12 0 -0.69 0 0 0</pose>
 			<child>right_diff_joint_link</child>
 			<parent>right_rocker_1</parent>
+			<axis>
+				<xyz>1 0 0</xyz>
+			</axis>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
 		</joint>
 		
-		<joint type="ball" name="right_diff_link_diff_joint">
+		<joint type="revolute2" name="right_diff_link_diff_joint">
 			<pose>-0.12 0 0.69 0 0 0</pose>
 			<child>right_diff_joint_link</child>
 			<parent>right_diff_triangle_1</parent>
-
+			<axis>
+				<xyz>1 0 0</xyz>
+			</axis>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
 		</joint>
 		
-		<joint type="ball" name="left_diff_link_rocker_joint">
-			<pose>-0.12 0 -0.69 0 0 0</pose>
+		<joint type="revolute2" name="left_diff_link_rocker_joint">
+			<pose>-0.12 20 -0.69 0 0 0</pose>
 			<child>left_diff_joint_link</child>
 			<parent>left_rocker_1</parent>
+			<axis>
+				<xyz>1 0 0</xyz>
+			</axis>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
 		</joint>
 		
-		<joint type="ball" name="left_diff_link_diff_joint">
+		<joint type="revolute2" name="left_diff_link_diff_joint">
 			<pose>0.12 0 0.69 0 0 0</pose>
 			<child>left_diff_joint_link</child>
 			<parent>left_diff_triangle_1</parent>
+			<axis>
+				<xyz>1 0 0</xyz>
+			</axis>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
 		</joint>
 	</model>
 </sdf>
