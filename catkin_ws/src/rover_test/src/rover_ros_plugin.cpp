@@ -100,10 +100,17 @@ namespace gazebo {
 		}
 		
 		void RoverStateCallback(const geometry_msgs::Quaternion::ConstPtr& rx_msg) {
-			front_left_wrench  = rx_msg->x;
-			front_right_wrench = rx_msg->y;
-			back_left_wrench = rx_msg->z;
-			back_right_wrench  = rx_msg->w;
+			this->fl_wheel_wrench  = rx_msg->fl_wheel_wrench;
+			this->ml_wheel_wrench  = rx_msg->ml_wheel_wrench;
+			this->rl_wheel_wrench  = rx_msg->rl_wheel_wrench;
+			this->fr_wheel_wrench  = rx_msg->fr_wheel_wrench;
+			this->mr_wheel_wrench  = rx_msg->mr_wheel_wrench;
+			this->rr_wheel_wrench  = rx_msg->rr_wheel_wrench;
+			
+			this->fl_steer_wrench  = rx_msg->fl_steer_wrench;
+			this->rl_steer_wrench  = rx_msg->rl_steer_wrench;
+			this->fr_steer_wrench  = rx_msg->fr_steer_wrench;
+			this->rr_steer_wrench  = rx_msg->rr_steer_wrench;
 		}
 
 		// Global pointer declarations
@@ -125,10 +132,17 @@ namespace gazebo {
 		private: physics::JointPtr fr_steer_joint;
 		private: physics::JointPtr rr_steer_joint;
 
-		private: float front_left_wrench;
-		private: float front_right_wrench;
-		private: float back_left_wrench;
-		private: float back_right_wrench;
+		private: float fl_wheel_wrench;
+		private: float ml_wheel_wrench;
+		private: float rl_wheel_wrench;
+		private: float rr_wheel_wrench;
+		private: float mr_wheel_wrench;
+		private: float fr_wheel_wrench;
+		
+		private: float fl_steer_wrench;
+		private: float rl_steer_wrench;
+		private: float rr_steer_wrench;
+		private: float fr_steer_wrench;
 
 		private: ros::Subscriber subscriber;
 	};
