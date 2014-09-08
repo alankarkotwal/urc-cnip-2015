@@ -5,6 +5,7 @@ project(rover_test)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  gazebo
   gazebo_msgs
   gazebo_ros
   roscpp
@@ -101,24 +102,35 @@ CATKIN_DEPENDS message_runtime
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIR}
+  ${GAZEBO_INCLUDE_DIRS}
+)
+link_directories(
+  ${GAZEBO_LIBRARY_DIRS}
 )
 
 ## Declare a cpp library
-# add_library(rover_test
-#   src/${PROJECT_NAME}/rover_test.cpp
-# )
+add_library( rover_ros_plugin
+  src/rover_ros_plugin.cpp
+)
 
 ## Declare a cpp executable
-# add_executable(rover_test_node src/rover_test_node.cpp)
+add_executable( rover_ros_node
+  src/rover_ros_node.cpp
+)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(rover_test_node rover_test_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(rover_test_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries( rover_ros_plugin
+  ${catkin_LIBRARIES}
+  ${GAZEBO_LIBRARIES}
+)
+target_link_libraries( rover_ros_node
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##

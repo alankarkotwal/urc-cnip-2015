@@ -1,6 +1,7 @@
 #include <ros/ros.h>
 #include <gazebo_msgs/ModelStates.h>
 #include <stdlib.h>
+#include <rover_test/RoverCommands.h>
 #define INDEX 0
 
 float t_vel_2 = 4;
@@ -26,18 +27,18 @@ void RoverStateCallback(const gazebo_msgs::ModelStates::ConstPtr& rx_msg) {
 	float vel_2 = x_vel*x_vel + y_vel*y_vel + z_vel*z_vel;
 	
 	// Set rover forces here and publish them to rover_forces
-	tx_msg->fl_wheel_wrench = 0;
-	tx_msg->ml_wheel_wrench = 0;
-	tx_msg->rl_wheel_wrench = 0;
-	tx_msg->rr_wheel_wrench = 0;
-	tx_msg->mr_wheel_wrench = 0;
-	tx_msg->fr_wheel_wrench = 0;
-	tx_msg->fl_steer_wrench = 0;
-	tx_msg->rl_steer_wrench = 0;
-	tx_msg->rr_steer_wrench = 0;
-	tx_msg->fr_steer_wrench = 0;
+	tx_msg.fl_wheel_wrench = 0;
+	tx_msg.ml_wheel_wrench = 0;
+	tx_msg.rl_wheel_wrench = 0;
+	tx_msg.rr_wheel_wrench = 0;
+	tx_msg.mr_wheel_wrench = 0;
+	tx_msg.fr_wheel_wrench = 0;
+	tx_msg.fl_steer_wrench = 0;
+	tx_msg.rl_steer_wrench = 0;
+	tx_msg.rr_steer_wrench = 0;
+	tx_msg.fr_steer_wrench = 0;
 
-	ROS_INFO("Velocity^2 = %f \t Scale = %f \t X Vel %f", vel_2, scale, x_vel);
+	ROS_INFO("Velocity^2 = %f \t X Vel %f", vel_2, x_vel);
 	publisher.publish(tx_msg);
 }
 

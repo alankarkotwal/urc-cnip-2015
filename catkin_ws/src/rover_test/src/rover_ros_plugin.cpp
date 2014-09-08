@@ -4,10 +4,12 @@
 #include <gazebo/common/common.hh>
 #include <gazebo/common/Plugin.hh>
 #include <ros/ros.h>
+#include <rover_test/RoverCommands.h>
 
 namespace gazebo {
 
-	class RoverSimulator : public RoverPlugin {
+	class RoverSimulator : public WorldPlugin
+	{
 	
 		void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf) {
 		
@@ -99,18 +101,18 @@ namespace gazebo {
 			}
 		}
 		
-		void RoverStateCallback(const geometry_msgs::Quaternion::ConstPtr& rx_msg) {
-			this->fl_wheel_wrench  = rx_msg->fl_wheel_wrench;
-			this->ml_wheel_wrench  = rx_msg->ml_wheel_wrench;
-			this->rl_wheel_wrench  = rx_msg->rl_wheel_wrench;
-			this->fr_wheel_wrench  = rx_msg->fr_wheel_wrench;
-			this->mr_wheel_wrench  = rx_msg->mr_wheel_wrench;
-			this->rr_wheel_wrench  = rx_msg->rr_wheel_wrench;
+		void RoverStateCallback(rover_test::RoverCommands rx_msg) {
+			this->fl_wheel_wrench  = rx_msg.fl_wheel_wrench;
+			this->ml_wheel_wrench  = rx_msg.ml_wheel_wrench;
+			this->rl_wheel_wrench  = rx_msg.rl_wheel_wrench;
+			this->fr_wheel_wrench  = rx_msg.fr_wheel_wrench;
+			this->mr_wheel_wrench  = rx_msg.mr_wheel_wrench;
+			this->rr_wheel_wrench  = rx_msg.rr_wheel_wrench;
 			
-			this->fl_steer_wrench  = rx_msg->fl_steer_wrench;
-			this->rl_steer_wrench  = rx_msg->rl_steer_wrench;
-			this->fr_steer_wrench  = rx_msg->fr_steer_wrench;
-			this->rr_steer_wrench  = rx_msg->rr_steer_wrench;
+			this->fl_steer_wrench  = rx_msg.fl_steer_wrench;
+			this->rl_steer_wrench  = rx_msg.rl_steer_wrench;
+			this->fr_steer_wrench  = rx_msg.fr_steer_wrench;
+			this->rr_steer_wrench  = rx_msg.rr_steer_wrench;
 		}
 
 		// Global pointer declarations
