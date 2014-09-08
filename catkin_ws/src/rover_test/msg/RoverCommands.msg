@@ -1,0 +1,10 @@
+float64 fl_wheel_wrench
+float64 ml_wheel_wrench
+float64 rl_wheel_wrench
+float64 rr_wheel_wrench
+float64 mr_wheel_wrench
+float64 fr_wheel_wrench
+float64 fl_steer_wrench
+float64 rl_steer_wrench
+float64 rr_steer_wrench
+float64 fr_steer_wrench
