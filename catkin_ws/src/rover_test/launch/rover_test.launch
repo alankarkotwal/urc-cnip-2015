@@ -7,7 +7,7 @@
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
   <arg name="verbose" default="true"/>
-  <arg name="world_name" default="worlds/dem_plugin.world"/> 
+  <arg name="world_name" default="worlds/rover_test.world"/> 
 
   <!-- set use_sim_time flag -->
   <group if="$(arg use_sim_time)">
@@ -35,6 +35,5 @@
     <node name="gazebo" pkg="gazebo_ros" type="gazebo" respawn="false" output="screen"
         args="$(arg command_arg1) $(arg command_arg2) $(arg command_arg3) $(arg world_name)" required="true"/>
   </group>
-  <node name="husky_ros_node" pkg="rozebo_demo" type="husky_ros_node" respawn="false" output="screen"/>
+  <node name="rover_ros_node" pkg="rover_test" type="rover_ros_node" respawn="false" output="screen"/>
 </launch>
-
