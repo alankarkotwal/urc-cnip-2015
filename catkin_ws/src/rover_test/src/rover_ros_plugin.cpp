@@ -8,9 +8,10 @@
 
 namespace gazebo {
 
-	class RoverSimulator : public WorldPlugin
+	class RoverSimulator : public ModelPlugin
 	{
 	
+		public:
 		void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf) {
 		
 			// Make sure the ROS node for Gazebo has already been initialized
@@ -64,16 +65,13 @@ namespace gazebo {
 			this->_updateConnection = event::Events::ConnectWorldUpdateBegin(boost::bind(&RoverSimulator::OnUpdate, this, _1));
 			ROS_INFO("Rover plugin for ROS successfully loaded :)");
 
-			// Check for new messages
-			//      ros::spin();
 			while(ros::ok()) {
 				ros::spinOnce();
 			}
 		}
 
-		// Called by the world update start event
-		void OnUpdate(const common::UpdateInfo & /*_info*/) {
-			if ( subscriber.getNumPublishers() != 0 ) {
+		void OnUpdate(const common::UpdateInfo &) {
+			if (subscriber.getNumPublishers() != 0) {
 				this->fl_wheel_joint->SetForce(0,fl_wheel_wrench);
 				this->ml_wheel_joint->SetForce(0,ml_wheel_wrench);
 				this->rl_wheel_joint->SetForce(0,rl_wheel_wrench);
