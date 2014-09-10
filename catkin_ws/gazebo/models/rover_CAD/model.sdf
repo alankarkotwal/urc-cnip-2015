@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+<model name="Rover_CAD">
+  <static>1</static>
+
+  <link name='chassis'>						<!--> Chassis Begins <-->
+    <pose>0 0 0.466 0 0 0</pose>
+    <collision name='chassis_collision'>
+      <geometry>
+        <box>
+          <size>0.57 0.919 0.140</size>				<!--> Chassis Collision <-->
+        </box>
+      </geometry>
+    </collision>
+
+    <visual name='chassis_visual'>
+      <geometry>
+        <box>
+          <size>0.57 0.919 0.140</size>				<!--> Chassis Visual <-->
+        </box>
+      </geometry>
+    </visual>
+  </link>							<!--> Chassis Ends <-->
+
+                <!-- Left Rocker 1 -->
+                <link name='left_rocker_1'>
+                        <pose>-4.0 3.42 4.3 0.13 0 0</pose>
+                        <collision name='lrock_link_1_coll'>
+                                <geometry>
+                                        <box>
+                                                <size>0.01 0.594 0.047</size>
+                                        </box>
+                                </geometry>
+                        </collision>
+
+                        <visual name='lrock_link_1_vis'>
+                                <geometry>
+                                        <box>
+                                                <size>0.01 0.594 0.047</size>
+                                        </box>
+                                </geometry>
+                        </visual>
+                </link>
+
+
+</model>
+</sdf>

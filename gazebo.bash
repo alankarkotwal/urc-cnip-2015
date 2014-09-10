@@ -43,11 +43,15 @@ ros_indigo(){
   esac
   wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
   sudo apt-get update
-  sudo apt-get install libopencv*
-  sudo apt-get install ros-indigo-desktop-full
+  sudo apt-get install libopencv* -y
+  sudo apt-get install ros-indigo-desktop-full -y
+  if [ $? -ne 0 ]; then
+    echo "\e[01;31m[ERR]: Failed installing ROS Indigo :(\nAborting...\e[0m"
+    exit 6
+  fi
   sudo rosdep init
   rosdep update
-  sudo apt-get install python-rosinstall
+  sudo apt-get install python-rosinstall -y
   echo "source /opt/ros/indigo/setup.sh" >> ~/.bashrc
 }
 
@@ -57,11 +61,15 @@ ros_hydro(){
   sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu raring main" > /etc/apt/sources.list.d/ros-latest.list'
   wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
   sudo apt-get update
-  sudo apt-get install libopencv*
-  sudo apt-get install ros-hydro-desktop-full
+  sudo apt-get install libopencv* -y
+  sudo apt-get install ros-hydro-desktop-full -y
+  if [ $? -ne 0 ]; then
+    echo "\e[01;31m[ERR]: Failed installing ROS Hydro :(\nAborting...\e[0m"
+    exit 6
+  fi
   sudo rosdep init
   rosdep update
-  sudo apt-get install python-rosinstall
+  sudo apt-get install python-rosinstall -y
   echo "source /opt/ros/hydro/setup.sh" >> ~/.bashrc
 }
 
@@ -69,27 +77,35 @@ gazebo_plain(){
   sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
   wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
   sudo apt-get update
-  sudo apt-get install libopencv*
-  sudo apt-get install gazebo4 libgazebo4-dev
+  sudo apt-get install libopencv* -y
+  sudo apt-get install gazebo4 libgazebo4-dev -y
+  if [ $? -ne 0 ]; then
+    echo "\e[01;31m[ERR]: Failed installing Gazebo4 :(\nAborting...\e[0m"
+    exit 6
+  fi
   echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 }
 
 gazebo_ros(){
-  sudo apt-get remove ros-fuerte-simulator-gazebo ros-groovy-simulator-gazebo
+  sudo apt-get remove ros-fuerte-simulator-gazebo ros-groovy-simulator-gazebo -y
   case "$codename" in
-    'trusty') ros_indigo; gazebo_plain; sudo apt-get install ros-indigo-gazebo4-msgs ros-indigo-gazebo4-plugins ros-indigo-gazebo4-ros ros-indigo-gazebo4-ros-control ros-indigo-gazebo4-ros-pkgs;;
-    'saucy') ros_hydro; gazebo_plain; sudo apt-get install ros-hydro-gazebo4-msgs ros-hydro-gazebo4-plugins ros-hydro-gazebo4-ros ros-hydro-gazebo4-ros-control ros-hydro-gazebo4-ros-pkgs;;
+    'trusty') ros_indigo; gazebo_plain; sudo apt-get install ros-indigo-gazebo4-msgs ros-indigo-gazebo4-plugins ros-indigo-gazebo4-ros ros-indigo-gazebo4-ros-control ros-indigo-gazebo4-ros-pkgs -y;;
+    'saucy') ros_hydro; gazebo_plain; sudo apt-get install ros-hydro-gazebo4-msgs ros-hydro-gazebo4-plugins ros-hydro-gazebo4-ros ros-hydro-gazebo4-ros-control ros-hydro-gazebo4-ros-pkgs -y;;
     *) echo -e "\e[01;31m[ERR]: Unable to determine operating system! Aborting...\e[0m";exit 5;
   esac
+  if [ $? -ne 0 ]; then
+    echo "\e[01;31m[ERR]: Failed installing Gazebo4 with ROS :(\nAborting...\e[0m"
+    exit 6
+  fi
   echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 }
 
 gazebo_dem(){
   sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
   wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-  sudo apt-get remove 'gazebo-*' 'sdformat-*' ros-hydro-simulator-gazebo ros-indigo-simulator-gazebo
-  sudo apt-get install libopencv*
-  sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev xsltproc ruby-ronn robot-player-dev* gdal-bin libgdal-dev libgdal1h python-gdal doxygen
+  sudo apt-get remove 'gazebo-*' 'sdformat-*' ros-hydro-simulator-gazebo ros-indigo-simulator-gazebo -y
+  sudo apt-get install libopencv* -y
+  sudo apt-get install build-essential libtinyxml-dev libboost-all-dev cmake mercurial pkg-config libprotoc-dev libprotobuf-dev protobuf-compiler libqt4-dev libtar-dev libcurl4-openssl-dev libcegui-mk2-dev libopenal-dev libtbb-dev libswscale-dev libavformat-dev libavcodec-dev libogre-1.8-dev libgts-dev libltdl3-dev playerc++ libxml2-dev libfreeimage-dev freeglut3-dev xsltproc ruby-ronn robot-player-dev* gdal-bin libgdal-dev libgdal1h python-gdal doxygen -y
   if [ $? -ne 0 ]; then
     echo "\e[01;31m[ERR]: Failed installing prerequisites for making gazebo4 :(\nAborting...\e[0m"
     exit 6
@@ -111,10 +127,16 @@ gazebo_dem(){
   mkdir build
   cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_TESTS_COMPILATION:BOOL=False ../
-  echo -e "\e[01;33m[WARN]: Is the above cmake output for gazebo4 correct? (y/n)\e[0m"
+  echo -e "\e[01;33m[WARN]: The cmake output above should contain no errors, and no more than the following two build warnings\e[0m"
+  echo "-- BUILD WARNINGS"
+  echo "-- 	DART not found, for dart physics engine option, please install libdart-core4-dev."
+  echo "-- 	Oculus Rift support will be disabled."
+  echo "-- END BUILD WARNINGS"
+  echo -e "\e[01;33m[WARN]: It should also contain '-- Install path: /usr'\e[0m"
+  echo -e "\e[01;33m[WARN]: Does the cmake output after '====== Configuring 3rd Party Packages ======' fulfill the above criteria? (y/n)\e[0m"
   read input
   if [ $input != 'y' ]; then
-    echo "Aborted. Gazebo4 cmake error!"
+    echo -e "\e[01;31mAborted. Gazebo4 cmake error! Take a screenshot of your cmake output and try again. If the problem persists send the screenshot to me.\e[0m"
     exit 7
   fi
   make -j4
